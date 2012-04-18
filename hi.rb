@@ -18,7 +18,7 @@ get '/hi' do
   "<li>"
   "request.remote_ip: #{request.remote_ip}"
 
-  "</ul>
+  "</ul>"
 
 end
 
