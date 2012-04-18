@@ -5,7 +5,7 @@ get '/' do
   ap request, :html => false
 
   body = ""
-  headers = %w{request.env['HTTP_X_REAL_IP'] request.env['REMOTE_ADDR'] request.ip}
+  headers = %w{request.env['HTTP_X_REAL_IP'] request.env['REMOTE_ADDR'] request.ip env['HTTP_X_REAL_IP'] env['REMOTE_ADDR']}
   body << "<pre>"
   headers.each do |header|
     body << "#{header}\t#{eval(header)}\n"
