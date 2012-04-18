@@ -1,24 +1,20 @@
 require 'sinatra'
+require 'awesome_print'
 
-get '/hi' do
-  "Hello World!"
+get '/' do
+  ap request, :html => false
 
-  "<p>"
+  body = ""
+  headers = %w{request.env['HTTP_X_REAL_IP'] request.env['REMOTE_ADDR'] request.ip}
+  body << "<pre>"
+  headers.each do |header|
+    body << "#{header}\t#{eval(header)}\n"
+  end
 
-  "<ul>"
-  "<li>"
-  "request.env['HTTP_X_REAL_IP']: #{request.env['HTTP_X_REAL_IP']}"
-  "</li>"
-  "<li>"
-  "request.env['HTTP_X_REAL_IP']: #{request.env['REMOTE_ADDR']}"
-  "</li>"
-  "<li>"
-  "request.ip: #{request.ip}"
-  "</li>"
-  "<li>"
-  "request.remote_ip: #{request.remote_ip}"
+  body << "\n"
 
-  "</ul>"
+  body << "</pre>"
 
+  body
 end
 
