@@ -8,11 +8,14 @@ get '/' do
   headers = %w{
     request.env['HTTP_X_REAL_IP'] 
     request.env['REMOTE_ADDR'] 
+    request.env["HTTP_X_FORWARDED_FOR"] 
     request.ip 
     env["HTTP_X_REAL_IP"] 
     env["REMOTE_ADDR"] 
+    env["HTTP_X_FORWARDED_FOR"] 
     request["HTTP_X_REAL_IP"] 
     request["REMOTE_ADDR"] 
+    request["HTTP_X_FORWARDED_FOR"] 
     request.host 
     request.port
     request.accept            
