@@ -6,6 +6,7 @@ get '/' do
 
   body = ""
   headers = %w{
+    url
     request.env['HTTP_X_REAL_IP'] 
     request.env['REMOTE_ADDR'] 
     request.env["HTTP_X_FORWARDED_FOR"] 
