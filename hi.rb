@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/base'
 require 'awesome_print'
 
-get '/' do
+get '/*' do
   #ap request, :html => false
 
   body = ""
