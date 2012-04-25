@@ -45,7 +45,7 @@ get '/*' do
   }
   body << "<table border=1>"
   headers.each do |header|
-    body << "<tr><td>#{header}</td><td><pre>#{eval(header)}</pre></td></tr>"
+    body << "<tr><td>#{header}</td><td><pre>#{eval(header).class}</pre></td><td>#{eval(header)}</td></tr>"
   end
   body << "</table>"
 
