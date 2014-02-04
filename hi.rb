@@ -14,6 +14,7 @@ get '/*' do
     env["HTTP_X_REAL_IP"] 
     env["REMOTE_ADDR"] 
     env["HTTP_X_FORWARDED_FOR"] 
+    env["HTTP_ORIGIN"]
     request["HTTP_X_REAL_IP"] 
     request["REMOTE_ADDR"] 
     request["HTTP_X_FORWARDED_FOR"] 
