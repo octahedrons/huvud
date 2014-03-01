@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    awesome_print (1.0.2)
     daemons (1.1.8)
     eventmachine (0.12.10)
     rack (1.4.1)
@@ -18,6 +17,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awesome_print
   sinatra (= 1.1.0)
   thin
