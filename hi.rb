@@ -1,6 +1,9 @@
 require 'sinatra'
 require 'sinatra/base'
 
+get '/proto' do
+  request.scheme
+end
 
 get '/*' do
   body = ""
