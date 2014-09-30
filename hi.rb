@@ -44,6 +44,7 @@ get '/*' do
     request.secure?
     request.env
   }
+  body << "<a href=/foo>/foo</a>"
   body << "<table border=1>"
   headers.each do |header|
     body <<
