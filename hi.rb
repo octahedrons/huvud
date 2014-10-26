@@ -5,6 +5,10 @@ get '/proto' do
   request.scheme
 end
 
+get '/204' do
+  halt 204
+end
+
 get '/*' do
   body = ""
   headers = %w{
