@@ -5,6 +5,10 @@ get '/proto' do
   request.scheme
 end
 
+get '/dploy' do
+  body 'hello'
+end
+
 get '/204' do
   halt 204
 end
