@@ -6,7 +6,7 @@ get '/proto' do
 end
 
 get '/dploy' do
-  body 'hello 123'
+  body 'hello'
 end
 
 get '/204' do
