@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/base'
+require 'json'
 
 get '/proto' do
   request.scheme
@@ -7,6 +8,10 @@ end
 
 get '/dploy' do
   body 'hello'
+end
+
+get '/json' do
+  json JSON.pretty_generate(request.env)
 end
 
 get '/204' do
