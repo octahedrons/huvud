@@ -6,6 +6,15 @@ get '/proto' do
   request.scheme
 end
 
+get '/params/:foo' do
+  body = {
+    "params[:foo]" => params[:foo],
+    "params['foo']" => params['foo'],
+    "params[:foo].to_s" => params[:foo].to_s,
+  }
+  json body
+end
+
 get '/dploy' do
   body 'hello'
 end
