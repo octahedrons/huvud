@@ -2,8 +2,8 @@ require 'sinatra'
 require 'sinatra/base'
 require 'json'
 
-get '/home' do
-  body "home || #{env['HTTP_X_REAL_IP']} || #{Time.now} || #{Time.now.to_i}"
+get '/contact' do
+  body "contact || #{env['HTTP_X_REAL_IP']} || #{Time.now} || #{Time.now.to_i}"
 end
 
 get '/customers' do
@@ -11,7 +11,8 @@ get '/customers' do
 end
 
 get '/products' do
-  body "products || #{env['HTTP_X_REAL_IP']} || #{Time.now} || #{Time.now.to_i}"
+  #body "products || #{env['HTTP_X_REAL_IP']} || #{Time.now} || #{Time.now.to_i}"
+  halt 403
 end
 
 get '/proto' do
