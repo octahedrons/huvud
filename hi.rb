@@ -3,11 +3,11 @@ require 'sinatra/base'
 require 'json'
 
 get '/customers' do
-  body "customers || #{request.ip} || #{Time.now} || #{Time.now.to_i}"
+  body "customers || #{env['HTTP_X_REAL_IP']} || #{Time.now} || #{Time.now.to_i}"
 end
 
 get '/products' do
-  body "products || #{request.ip} || #{Time.now} || #{Time.now.to_i}"
+  body "products || #{env['HTTP_X_REAL_IP']} || #{Time.now} || #{Time.now.to_i}"
 end
 
 get '/proto' do
