@@ -2,6 +2,10 @@ require 'sinatra'
 require 'sinatra/base'
 require 'json'
 
+get '/home' do
+  body "home || #{env['HTTP_X_REAL_IP']} || #{Time.now} || #{Time.now.to_i}"
+end
+
 get '/customers' do
   body "customers || #{env['HTTP_X_REAL_IP']} || #{Time.now} || #{Time.now.to_i}"
 end
