@@ -2,6 +2,14 @@ require 'sinatra'
 require 'sinatra/base'
 require 'json'
 
+get '/customers' do
+  body "customers || #{request.ip} || #{Time.now} || #{Time.now.to_i}"
+end
+
+get '/products' do
+  body "products || #{request.ip} || #{Time.now} || #{Time.now.to_i}"
+end
+
 get '/proto' do
   request.scheme
 end
