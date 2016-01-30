@@ -4,7 +4,7 @@ require 'json'
 
 get '/latin1' do
   headers "Content-Type" => "text/html; charset=iso-8859-1"
-  body "<html><head><title>ГҐГ¤Г¶ foo</title></head><body>ГҐГ¤Г¶ bar</body></html>"
+  body "<html><head><title>едц foo</title></head><body>едц bar</body></html>"
 end
 
 get '/contact' do
