@@ -2,6 +2,11 @@ require 'sinatra'
 require 'sinatra/base'
 require 'json'
 
+get '/latin1' do
+  header "Content-Type", "text/html; charset=iso-8859-1"
+  body "<html><head><title>åäö foo</title></head><body>åäö bar</body></html>"
+end
+
 get '/contact' do
   body "contact || #{env['HTTP_X_REAL_IP']} || #{Time.now} || #{Time.now.to_i}"
 end
