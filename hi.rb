@@ -3,7 +3,7 @@ require 'sinatra/base'
 require 'json'
 
 get '/latin1' do
-  header "Content-Type", "text/html; charset=iso-8859-1"
+  headers "Content-Type" => "text/html; charset=iso-8859-1"
   body "<html><head><title>åäö foo</title></head><body>åäö bar</body></html>"
 end
 
