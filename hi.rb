@@ -43,6 +43,7 @@ end
 get '/*' do
   body = ""
   headers = %w{
+    request.env['SERVER_PROTOCOL']
     request.env['HTTP_X_REAL_IP']
     request.env['REMOTE_ADDR']
     request.env["HTTP_X_FORWARDED_FOR"]
