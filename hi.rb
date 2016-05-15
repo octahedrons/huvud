@@ -1,6 +1,9 @@
 require 'sinatra'
 require 'sinatra/base'
+require 'sinatra/reloader'
 require 'json'
+
+require_relative 'app_metadata'
 
 get '/contact' do
   body "contact || #{env['HTTP_X_REAL_IP']} || #{Time.now} || #{Time.now.to_i}"
@@ -80,6 +83,7 @@ get '/*' do
     request.secure?
     request.env
   }
+  body << "<p>This is #{AppMetadata.app_name} (#{AppMetadata.short_commit_link})</p>"
   body << "<a href=/foo>/foo</a>"
   body << "<table border=1>"
   headers.each do |header|
