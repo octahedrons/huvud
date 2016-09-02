@@ -82,16 +82,26 @@ get '/*' do
     request.path
     request.ip
     request.secure?
-    request.env
   }
   body << "<p>This is #{AppMetadata.app_name} (#{AppMetadata.short_commit_link})</p>"
   body << "<a href=/foo>/foo</a>"
   body << "<table border=1>"
   headers.each do |header|
+    puts "#{header}: #{eval(header)}"
     body <<
       "<tr><td>#{header}</td>" <<
       "<td><pre>#{eval(header).class}</pre></td>" <<
       "<td>#{eval(header)}</td></tr>"
+  end
+  body << "</table>"
+
+  body << "<p><code>request.env</code><p>"
+  body << "<table border=1>"
+  request.env.each do |header, value|
+    puts "#{header}: #{value}"
+    body <<
+      "<tr><td>#{header}</td>" <<
+      "<td>#{value}</td></tr>"
   end
   body << "</table>"
 
