@@ -51,6 +51,7 @@ get '/*' do
     request.env['REMOTE_ADDR']
     request.env["HTTP_X_FORWARDED_FOR"]
     request.ip
+    env["HTTP_USER_AGENT"]
     env["HTTP_X_REAL_IP"]
     env["REMOTE_ADDR"]
     env["HTTP_X_FORWARDED_FOR"]
