@@ -3,6 +3,7 @@ GEM
   specs:
     backports (3.6.8)
     multi_json (1.12.0)
+    puma (3.5.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -25,6 +26,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  puma
   sinatra
   sinatra-contrib
 
@@ -32,4 +34,4 @@ RUBY VERSION
    ruby 2.2.5p319
 
 BUNDLED WITH
-   1.12.2
+   1.12.5
