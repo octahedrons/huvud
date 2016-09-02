@@ -87,7 +87,6 @@ get '/*' do
   body << "<a href=/foo>/foo</a>"
   body << "<table border=1>"
   headers.each do |header|
-    puts "#{header}: #{eval(header)}"
     body <<
       "<tr><td>#{header}</td>" <<
       "<td><pre>#{eval(header).class}</pre></td>" <<
@@ -98,7 +97,7 @@ get '/*' do
   body << "<p><code>request.env</code><p>"
   body << "<table border=1>"
   request.env.each do |header, value|
-    puts "#{header}: #{value}"
+    puts "#{env['HTTP_X_REQUEST_ID']} #{header}: #{value}"
     body <<
       "<tr><td>#{header}</td>" <<
       "<td>#{value}</td></tr>"
