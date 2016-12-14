@@ -31,7 +31,7 @@ DEPENDENCIES
   sinatra-contrib
 
 RUBY VERSION
-   ruby 2.2.5p319
+   ruby 2.2.6p396
 
 BUNDLED WITH
-   1.12.5
+   1.13.6
