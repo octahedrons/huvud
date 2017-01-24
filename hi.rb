@@ -1,9 +1,21 @@
+$stdout.sync = true
+$stderr.sync = true
+
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'json'
 
+require "pry-byebug"
+
 require_relative 'app_metadata'
+
+if ENV["RACK_ENV"] == "development"
+  get '/debug' do
+    binding.pry
+    "debugging"
+  end
+end
 
 get '/contact' do
   body "contact || #{env['HTTP_X_REAL_IP']} || #{Time.now} || #{Time.now.to_i}"

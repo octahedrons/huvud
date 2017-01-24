@@ -8,6 +8,12 @@ Start:
 
 Open [http://localhost:5000/](http://localhost:5000/).
 
+Or debug (only `RACK_ENV=development`)
+
+    $ bundle exec racksh
+    Rack::Shell v1.0.0 started in development environment.
+    [1] pry(main)> $rack.get '/debug'
+
 URLs:
 
 http://huvud.herokuapp.com
