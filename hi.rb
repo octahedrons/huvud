@@ -17,6 +17,10 @@ if ENV["RACK_ENV"] == "development"
   end
 end
 
+get '/ua' do
+  body request.user_agent
+end
+
 get '/contact' do
   body "contact || #{env['HTTP_X_REAL_IP']} || #{Time.now} || #{Time.now.to_i}"
 end
