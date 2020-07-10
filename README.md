@@ -23,3 +23,5 @@ https://huvud.herokuapp.com
 http://huvud.starkast.net
 
 https://huvud.starkast.net
+
+Automatically deployed.
