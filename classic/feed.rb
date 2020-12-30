@@ -1,3 +1,5 @@
+require "sinatra"
+
 helpers do
   def feed
     feed = <<-EOF

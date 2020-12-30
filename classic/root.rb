@@ -8,7 +8,7 @@ require 'json'
 
 require "pry-byebug"
 
-require_relative 'app_metadata'
+require_relative '../lib/app_metadata'
 
 if ENV["RACK_ENV"] == "development"
   get '/debug' do
