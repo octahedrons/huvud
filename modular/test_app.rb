@@ -2,10 +2,11 @@ require "sinatra"
 require "sinatra/base"
 
 class TestApp < Sinatra::Base
-  post "/" do
-    pp params
-    foo = (params[:foo] || '').strip
+  get "/*" do
+    body "foo"
+  end
 
-    body "tut #{foo.inspect} (#{foo.class})"
+  post "/*" do
+    body "foo"
   end
 end

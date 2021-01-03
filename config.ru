@@ -10,6 +10,7 @@ require_relative "modular/protected_app"
 require_relative "modular/stream_app"
 
 map "/test" do
+  use DumpEnv
   run TestApp
 end
 
