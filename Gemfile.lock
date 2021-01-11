@@ -50,7 +50,7 @@ DEPENDENCIES
   sinatra-contrib (= 2.0.8.1)
 
 RUBY VERSION
-   ruby 2.6.6p146
+   ruby 2.7.2p137
 
 BUNDLED WITH
    1.17.3

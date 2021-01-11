@@ -7,6 +7,10 @@ class TestApp < Sinatra::Base
   end
 
   post "/*" do
+    token = params["authenticity_token"]
+    pp token.inspect
+    # Base64.strict_decode64(token)
+
     body "foo"
   end
 end
