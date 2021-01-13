@@ -31,12 +31,10 @@ class StreamApp < Sinatra::Base
       stream do |out|
         keep_alive_thread = Thread.new do
           loop do
-            begin
-              out.puts "."
-              sleep 1
-            rescue Errno::EPIPE
-              break
-            end
+            out.puts "."
+            sleep 1
+          rescue Errno::EPIPE
+            break
           end
         end
 
