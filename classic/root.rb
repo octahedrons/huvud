@@ -81,6 +81,8 @@ get '/*' do
     request.scheme
     request.script_name
     request.path_info
+    request.base_url
+    request.fullpath
     request.port
     request.request_method
     request.query_string
