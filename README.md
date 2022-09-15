@@ -27,9 +27,12 @@ URLs:
 Deployed on [Fly.io](https://fly.io).
 
 ```bash
-# initial setup, create
+# initial setup, create app
 fly apps create --org personal --name huvud
 
-# delpoy
+# get token for github actions deployment
+fly auth token
+
+# deploy by hand
 fly deploy
 ```
