@@ -20,5 +20,16 @@ URLs:
 * https://huvud.herokuapp.com
 * http://huvud.starkast.net
 * https://huvud.starkast.net
+* https://huvud.fly.dev
 
-Automatically deployed.
+## Deployment
+
+Deployed on [Fly.io](https://fly.io).
+
+```bash
+# initial setup, create
+fly apps create --org personal --name huvud
+
+# delpoy
+fly deploy
+```

@@ -1,1 +1,1 @@
-web: bundle exec puma -p $PORT --log-requests
+web: bundle exec puma -p $PORT --log-requests --debug
