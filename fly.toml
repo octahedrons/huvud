@@ -5,6 +5,7 @@ app = "huvud"
 
 [env]
   PORT = "8080"
+  HEROKU_APP_NAME = "huvud-fly"
 
 [[services]]
   internal_port = 8080
