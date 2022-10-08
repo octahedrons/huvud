@@ -61,6 +61,9 @@ end
 
 get '/*' do
   body = ""
+  body << "<html><head>"
+  body << %(<meta name="color-scheme" content="dark light">)
+  body << "<title>huvud</title></head><body>"
   headers = %w{
     request.env['SERVER_PROTOCOL']
     request.env['HTTP_X_REAL_IP']
@@ -120,7 +123,7 @@ get '/*' do
       "<tr><td>#{header}</td>" <<
       "<td>#{value}</td></tr>"
   end
-  body << "</table>"
+  body << "</table></body></html>"
 
   body
 end
