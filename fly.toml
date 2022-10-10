@@ -5,6 +5,7 @@ app = "huvud"
 
 [env]
   PORT = "8080"
+  RACK_ENV = "production"
   HEROKU_APP_NAME = "huvud-fly"
 
 [[services]]
