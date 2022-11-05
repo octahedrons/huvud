@@ -16,22 +16,22 @@ jobs:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
 
-      - run: fly releases
+      - run: flyctl releases
         env:
           FLY_API_TOKEN: "${{ secrets.FLY_API_TOKEN }}"
 
-      - run: fly releases --json
+      - run: flyctl releases --json
         env:
           FLY_API_TOKEN: "${{ secrets.FLY_API_TOKEN }}"
 
       - run: |
-          fly releases --json | jq 'max_by(.Version).Version'
+          flyctl releases --json | jq 'max_by(.Version).Version'
         env:
           FLY_API_TOKEN: "${{ secrets.FLY_API_TOKEN }}"
 
       - name: Create FLY_RELEASE_VERSION
         run: |
-          echo "FLY_RELEASE_VERSION=$(fly releases --json | jq 'max_by(.Version).Version')" >> $GITHUB_ENV
+          echo "FLY_RELEASE_VERSION=$(flyctl releases --json | jq 'max_by(.Version).Version')" >> $GITHUB_ENV
         env:
           FLY_API_TOKEN: "${{ secrets.FLY_API_TOKEN }}"
 
