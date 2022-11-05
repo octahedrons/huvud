@@ -13,33 +13,7 @@ jobs:
     concurrency: deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: superfly/flyctl-actions/setup-flyctl@master
-
-      - run: flyctl releases
-        env:
-          FLY_API_TOKEN: "${{ secrets.FLY_API_TOKEN }}"
-
-      - run: flyctl releases --json
-        env:
-          FLY_API_TOKEN: "${{ secrets.FLY_API_TOKEN }}"
-
-      - run: |
-          flyctl releases --json | jq 'max_by(.Version).Version'
-        env:
-          FLY_API_TOKEN: "${{ secrets.FLY_API_TOKEN }}"
-
-      - name: Create FLY_RELEASE_VERSION
-        run: |
-          echo "FLY_RELEASE_VERSION=$(flyctl releases --json | jq 'max_by(.Version).Version')" >> $GITHUB_ENV
-        env:
-          FLY_API_TOKEN: "${{ secrets.FLY_API_TOKEN }}"
-
-      - name: Print ENV
-        run: |
-          env | sort
-
-      # - uses: dentarg/fly@main
-      #   with:
-      #     fly-token: ${{ secrets.FLY_API_TOKEN }}
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: dentarg/fly@main
+        with:
+          fly-token: ${{ secrets.FLY_API_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
