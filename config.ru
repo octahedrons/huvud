@@ -1,6 +1,7 @@
 $stdout.sync = true
 $stderr.sync = true
 
+require "open-uri"
 require "securerandom"
 
 require_relative "lib/dump_env"
@@ -23,6 +24,22 @@ end
 
 map "/stream" do
   run StreamApp
+end
+
+map "/ip/short" do
+  run ->(env) do
+    body = URI.open("http://ip.burd.se")
+
+    [200, { "Content-Type" => "text/plain" }, [body]]
+  end
+end
+
+map "/ip" do
+  run ->(env) do
+    body = URI.open("https://burd.se/ip")
+
+    [200, { "Content-Type" => "text/plain" }, [body]]
+  end
 end
 
 require_relative "classic/feed"
