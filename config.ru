@@ -26,19 +26,19 @@ map "/stream" do
   run StreamApp
 end
 
-map "/ip/short" do
+map "/app/ip/short" do
   run ->(env) do
-    body = URI.open("http://ip.burd.se")
+    body = URI.open("http://ip.burd.se").read
 
     [200, { "Content-Type" => "text/plain" }, [body]]
   end
 end
 
-map "/ip" do
+map "/app/ip" do
   run ->(env) do
-    body = URI.open("https://burd.se/ip")
+    body = URI.open("https://burd.se/ip").read
 
-    [200, { "Content-Type" => "text/plain" }, [body]]
+    [200, { "Content-Type" => "text/html" }, [body]]
   end
 end
 
