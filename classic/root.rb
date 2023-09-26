@@ -34,6 +34,26 @@ get '/products' do
   halt 403
 end
 
+get '/http' do
+  http_entries = request.env.select { |key, val| key.start_with?("HTTP_") }
+
+  body(http_entries.to_s)
+end
+
+get '/pre' do
+  http_entries = request.env.select { |key, val| key.start_with?("HTTP_") }
+
+  text = <<~BODY
+    HTTP_ORIGIN=#{request.env["HTTP_ORIGIN"]}
+    HTTP_ORIGIN=#{request.env["HTTP_X_ORIGIN"]}
+
+    #{http_entries.to_s}
+
+  BODY
+
+  body(request.env.to_s)
+end
+
 get '/proto' do
   request.scheme
 end
