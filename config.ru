@@ -17,7 +17,7 @@ end
 
 map "/p" do
   use DumpEnv
-  use Rack::Session::Cookie, secret: SecureRandom.hex
+  use Rack::Session::Cookie, secret: SecureRandom.hex(32)
 
   run ProtectedApp
 end
