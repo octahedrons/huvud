@@ -6,12 +6,15 @@ set -x
 # install app dependencies
 bundle install
 
+# install overman if not installed
+command -v overman >/dev/null 2>&1 || gem install --no-document overman
+
 # start app and wait for it
-bundle exec rackup &
+overman start &
 sleep 3
 
 # run the test and save the result
-curl --silent --fail http://localhost:9292/
+curl --silent --fail http://localhost:${PORT:-9292}/
 test_result=$?
 
 # stop app
