@@ -95,9 +95,6 @@ get '/*' do
     env["REMOTE_ADDR"]
     env["HTTP_X_FORWARDED_FOR"]
     env["QUERY_STRING"]
-    request["HTTP_X_REAL_IP"]
-    request["REMOTE_ADDR"]
-    request["HTTP_X_FORWARDED_FOR"]
     request.host
     request.port
     request.accept
@@ -115,7 +112,6 @@ get '/*' do
     request.host
     request.get?
     request.form_data?
-    request["SOME_HEADER"]
     request.referrer
     request.user_agent
     request.cookies
@@ -129,6 +125,7 @@ get '/*' do
   body << "<a href=/foo>/foo</a>"
   body << "<table border=1>"
   headers.each do |header|
+    pp "header=#{header}"
     body <<
       "<tr><td>#{header}</td>" <<
       "<td><pre>#{eval(header).class}</pre></td>" <<
