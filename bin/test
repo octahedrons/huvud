@@ -14,7 +14,7 @@ overman start &
 sleep 3
 
 # run the test and save the result
-curl --silent --fail http://localhost:${PORT:-9292}/
+curl --silent --fail http://localhost:${PORT:-5000}/
 test_result=$?
 
 # stop app
