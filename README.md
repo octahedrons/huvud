@@ -16,8 +16,6 @@ Or debug (only `RACK_ENV=development`)
 
 URLs:
 
-* http://huvud.herokuapp.com
-* https://huvud.herokuapp.com
 * http://huvud.starkast.net
 * https://huvud.starkast.net
 * https://huvud.fly.dev
