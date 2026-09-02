@@ -3,6 +3,7 @@ $stderr.sync = true
 
 require 'sinatra'
 require 'sinatra/base'
+require 'sinatra/json'
 require 'sinatra/reloader'
 require 'json'
 
