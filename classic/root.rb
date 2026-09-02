@@ -73,7 +73,8 @@ get '/dploy' do
 end
 
 get '/json' do
-  json JSON.pretty_generate(request.env)
+  content_type :json
+  JSON.pretty_generate(request.env)
 end
 
 get '/204' do
@@ -146,4 +147,3 @@ get '/*' do
 
   body
 end
-

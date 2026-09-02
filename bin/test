@@ -17,6 +17,17 @@ sleep 3
 curl --silent --fail http://localhost:${PORT:-5000}/
 test_result=$?
 
+if [ "$test_result" -eq 0 ]; then
+  curl --silent --fail http://localhost:${PORT:-5000}/json |
+    ruby -rjson -e '
+      body = STDIN.read
+      value = JSON.parse(body)
+      abort "expected /json to return an object" unless value.is_a?(Hash)
+      abort "expected /json to be pretty printed" unless body.start_with?("{\n  ")
+    '
+  test_result=$?
+fi
+
 # stop app
 kill $!
 wait $!
